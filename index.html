@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Code Craft Labs – Digital Innovation</title>
+<title>The Code Craft Labs | Premium IT Solutions</title>
 
-<meta name="description" content="The Code Craft Labs builds premium websites, automation, and digital products for future-ready businesses.">
-<meta name="keywords" content="Code Craft Labs, Web Development, IT Services, WordPress, UI UX, Automation">
+<!-- SEO -->
+<meta name="description" content="The Code Craft Labs provides premium websites, landing pages, SEO and automation solutions.">
+<meta name="keywords" content="Web Development, SEO, Landing Pages, Automation, Code Craft Labs">
 <meta name="author" content="The Code Craft Labs">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,12 +16,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Poppins',sans-serif;
   background:#0b0f19;
+  font-family:'Poppins',sans-serif;
   color:#eaeaea;
 }
 
-/* VIDEO HERO */
+/* HERO VIDEO */
 .hero{
   position:relative;
   height:100vh;
@@ -28,102 +29,128 @@ body{
 }
 .hero video{
   position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
+  left:0;top:0;
   object-fit:cover;
   filter:brightness(0.45);
 }
 .hero-content{
   position:relative;
-  z-index:2;
+  z-index:10;
   height:100%;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  align-items:center;
   text-align:center;
-  padding:20px;
+  align-items:center;
+  padding:25px;
 }
 .hero h1{
-  font-size:3.5rem;
+  font-size:3.8rem;
   font-weight:700;
-  letter-spacing:1px;
+  animation:fadeIn 1.5s ease;
 }
 .hero p{
+  margin-top:10px;
   font-size:1.3rem;
   opacity:.9;
+  animation:fadeIn 2s ease;
 }
 .hero span{
   margin-top:8px;
-  font-size:1rem;
   opacity:.7;
+  font-size:1rem;
+  animation:fadeIn 2.5s ease;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn{
-  margin-top:25px;
-  padding:14px 34px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#00f2fe,#4facfe);
+  margin-top:30px;
+  padding:14px 32px;
+  background:linear-gradient(135deg,#00eaff,#4f52ff);
   color:#000;
+  border-radius:35px;
   font-weight:600;
   text-decoration:none;
-  box-shadow:0 0 25px rgba(79,172,254,.6);
   transition:.3s;
+  box-shadow:0 0 25px rgba(79,172,254,.5);
 }
 .btn:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 0 40px rgba(79,172,254,1);
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 0 40px rgba(79,172,254,.9);
 }
 
-/* SECTIONS */
+/* SECTION TITLE */
 section{
   max-width:1200px;
   margin:auto;
   padding:90px 20px;
 }
-section h2{
+.title{
   text-align:center;
   font-size:2.4rem;
   margin-bottom:50px;
 }
 
 /* SERVICES */
-.services{
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
 .card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
-  border-radius:18px;
+  background:rgba(255,255,255,0.06);
   padding:35px;
+  border-radius:18px;
   text-align:center;
+  border:1px solid rgba(255,255,255,.09);
+  backdrop-filter:blur(10px);
   transition:.4s;
-  border:1px solid rgba(255,255,255,.1);
 }
 .card:hover{
   transform:translateY(-12px);
-  box-shadow:0 20px 60px rgba(0,242,254,.35);
+  box-shadow:0 20px 60px rgba(0,242,254,.25);
+}
+.card img{
+  width:70px;
+  margin-bottom:20px;
 }
 .card h3{
-  margin-bottom:12px;
   color:#4facfe;
+  margin-bottom:12px;
 }
 .card p{
-  font-size:.95rem;
   opacity:.85;
 }
 
-/* ABOUT */
-.about{
-  max-width:900px;
-  margin:auto;
+/* PROJECTS */
+.project-card{
+  background:rgba(255,255,255,.05);
+  padding:25px;
+  border-radius:16px;
   text-align:center;
-  font-size:1.1rem;
-  line-height:1.9;
-  opacity:.9;
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.1);
+  transition:.3s;
+}
+.project-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 50px rgba(79,172,254,.35);
+}
+
+/* TESTIMONIALS */
+.testimonial-card{
+  background:rgba(255,255,255,.05);
+  padding:28px;
+  border-radius:16px;
+  font-style:italic;
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(8px);
+}
+.testimonial-card h4{
+  margin-top:12px;
+  text-align:right;
 }
 
 /* CONTACT */
@@ -135,17 +162,17 @@ form{
   gap:15px;
 }
 input,textarea{
-  padding:15px;
-  border-radius:10px;
-  border:none;
   background:#141a2b;
+  border:none;
+  border-radius:12px;
+  padding:15px;
   color:#fff;
 }
 button{
+  background:linear-gradient(135deg,#00eaff,#4f52ff);
   padding:15px;
   border:none;
   border-radius:30px;
-  background:linear-gradient(135deg,#00f2fe,#4facfe);
   font-weight:700;
   cursor:pointer;
   transition:.3s;
@@ -156,26 +183,19 @@ button:hover{
 
 /* FOOTER */
 footer{
-  background:#060912;
   padding:25px;
   text-align:center;
-  font-size:14px;
+  background:#060912;
   opacity:.7;
+  font-size:14px;
 }
 
-/* ANIMATION */
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
-}
-.fade.show{
-  opacity:1;
-  transform:none;
-}
+/* SCROLL ANIMATION */
+.fade{opacity:0;transform:translateY(40px);transition:1s}
+.fade.show{opacity:1;transform:none}
 
 @media(max-width:768px){
-.hero h1{font-size:2.4rem}
+  .hero h1{font-size:2.6rem}
 }
 </style>
 </head>
@@ -190,48 +210,110 @@ footer{
 
   <div class="hero-content">
     <h1>The Code Craft Labs</h1>
-    <p>Crafting Future-Ready Digital Solutions</p>
-    <span>Web • Automation • UI/UX • Innovation</span>
-    <a href="#contact" class="btn">Start Your Project</a>
+    <p>Premium Websites • Landing Pages • Automation • SEO</p>
+    <span>Trusted IT Partner for Fast-Growing Businesses</span>
+    <a href="#contact" class="btn">Get Quote</a>
   </div>
 </div>
 
 <!-- SERVICES -->
 <section class="fade">
-<h2>Our Services</h2>
-<div class="services">
-  <div class="card"><h3>Web Development</h3><p>High-performance websites built for speed, security and growth.</p></div>
-  <div class="card"><h3>WordPress Solutions</h3><p>Custom themes, plugins and enterprise-grade WordPress builds.</p></div>
-  <div class="card"><h3>UI / UX Design</h3><p>Modern, clean and conversion-focused user experiences.</p></div>
-  <div class="card"><h3>Automation</h3><p>CRM, workflows and business automation that saves time.</p></div>
-  <div class="card"><h3>Maintenance</h3><p>Ongoing support, security, backups and monitoring.</p></div>
-  <div class="card"><h3>Consulting</h3><p>Technology strategy & digital growth planning.</p></div>
+<h2 class="title">Our Services</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://i.ibb.co/YmVnwB3/webdev.webp">
+<h3>Web Development</h3>
+<p>High-speed professional websites.</p>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/pjMXBwgb/load-153679281.webp">
+<h3>Landing Pages</h3>
+<p>High converting landing pages.</p>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/GvNbG28S/Automation-crm.png">
+<h3>Automation</h3>
+<p>CRM, WhatsApp & email workflows.</p>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/DP51zrLg/speed.jpg">
+<h3>Speed & SEO</h3>
+<p>Page speed + ranking boost.</p>
+</div>
+
 </div>
 </section>
 
-<!-- ABOUT -->
+<!-- PROJECTS -->
 <section class="fade">
-<h2>About Us</h2>
-<div class="about">
-The Code Craft Labs is a modern IT services company focused on building
-scalable, secure and visually stunning digital products.
-We help businesses transform ideas into high-impact digital solutions.
+<h2 class="title">Projects</h2>
+<div class="grid">
+
+<div class="project-card">
+<h3>INBIX 2025 Conference</h3>
+<p>Bioinformatics conference platform.</p>
+<a class="btn" href="https://inbix2025.icmrnirth.org/" target="_blank">View Live</a>
+</div>
+
+<div class="project-card">
+<h3>Hotels in Spiti Valley</h3>
+<p>Hotel booking & CRM automation.</p>
+<a class="btn" href="https://hotelspitivalley.com/" target="_blank">View Live</a>
+</div>
+
+<div class="project-card">
+<h3>Bungalows in Lonavala</h3>
+<p>Real estate lead generation system.</p>
+<a class="btn" href="https://www.bungalowsinlonavala.com/" target="_blank">View Live</a>
+</div>
+
+<div class="project-card">
+<h3>Dr. Falke Medical</h3>
+<p>Medical booking & analytics platform.</p>
+<a class="btn" href="https://drfalke.in/" target="_blank">View Live</a>
+</div>
+
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="fade">
+<h2 class="title">Client Testimonials</h2>
+<div class="grid">
+<div class="testimonial-card">
+<p>“Website speed jumped from 32 to 92.”</p>
+<h4>— Amit Yadav</h4>
+</div>
+
+<div class="testimonial-card">
+<p>“Clean UI & super fast delivery.”</p>
+<h4>— Priya Singh</h4>
+</div>
+
+<div class="testimonial-card">
+<p>“Automation saved 20+ hours weekly.”</p>
+<h4>— Rahul Verma</h4>
+</div>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="fade">
-<h2>Contact Us</h2>
-<form onsubmit="event.preventDefault();alert('Thank you! We will contact you soon.')">
-  <input type="text" placeholder="Your Name" required>
-  <input type="email" placeholder="Your Email" required>
-  <textarea rows="4" placeholder="Your Message" required></textarea>
-  <button type="submit">Send Message</button>
+<h2 class="title">Contact Us</h2>
+<form action="https://formsubmit.co/thecodecraft97G@gmail.com" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+<textarea name="message" rows="5" placeholder="Your Project Details" required></textarea>
+<button type="submit">Send Message</button>
 </form>
 </section>
 
 <footer>
-© 2026 The Code Craft Labs • Crafted with ❤️
+© 2026 The Code Craft Labs — Premium IT Solutions
 </footer>
 
 <script>
