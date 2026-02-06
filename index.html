@@ -10,17 +10,22 @@
     <meta name="description" content="The Code Craft Labs - High-end Websites, CRM Automation, SEO & Marketing Systems for Indian Businesses.">
     <meta name="keywords" content="web development, SEO, branding, automations, CRM, landing pages, marketing">
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
             --bg: #030712;
             --card: #0f172a;
-            --border: rgba(255,255,255,0.08);
+            --border: rgba(255,255,255,0.1);
             --primary: #6366f1;
-            --accent: #06b6d4;
+            --accent: #00eaff;
             --text: #f1f5f9;
             --muted: #94a3b8;
+            --glass: rgba(255,255,255,0.05);
         }
 
         body {
@@ -31,11 +36,12 @@
             scroll-behavior: smooth;
         }
 
+        /* NAVBAR --------------------------------------------------- */
         nav {
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(3,7,18,0.7);
+            background: rgba(3,7,18,0.75);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
             padding: 15px 0;
@@ -52,18 +58,17 @@
         }
 
         .logo {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             color: transparent;
-            animation: floatText 3s infinite ease-in-out;
+            animation: floatText 3s infinite;
         }
 
         @keyframes floatText {
-            0% { transform: translateY(0); }
+            0%,100% { transform: translateY(0); }
             50% { transform: translateY(-4px); }
-            100% { transform: translateY(0); }
         }
 
         nav ul {
@@ -76,23 +81,42 @@
             color: var(--muted);
             font-weight: 500;
             text-decoration: none;
+            transition: .3s;
         }
 
         nav ul li a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
 
+        /* HERO ----------------------------------------------------- */
         .hero {
-            padding: 180px 20px 120px;
+            padding: 180px 20px 130px;
             text-align: center;
-            background: radial-gradient(circle at center, rgba(99,102,241,0.2), transparent);
+            background: radial-gradient(circle at center, rgba(0,234,255,0.12), transparent 60%);
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
             font-weight: 800;
+            line-height: 1.2;
         }
 
+        .hero p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .demo-badge {
+            margin-top: 25px;
+            background: var(--accent);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            color: black;
+        }
+
+        /* SECTIONS -------------------------------------------------- */
         section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -101,66 +125,68 @@
 
         .title {
             text-align: center;
-            font-size: 2.6rem;
+            font-size: 2.7rem;
             font-weight: 800;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
+        /* ABOUT ------------------------------------------------------ */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
+            align-items: center;
         }
 
         .about-grid img {
             width: 100%;
-            height: 550px;
+            height: 520px;
             object-fit: cover;
-            border-radius: 18px;
+            border-radius: 20px;
             border: 1px solid var(--border);
+            box-shadow: 0 0 30px rgba(0,255,255,0.15);
         }
 
+        /* UNIVERSAL GRIDS --------------------------------------------- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-            gap: 30px;
+            gap: 35px;
         }
 
-        .card {
-            background: var(--card);
+        /* CARDS -------------------------------------------------------- */
+        .card, .testimonial-card, .job-box {
+            background: var(--glass);
             padding: 25px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            transition: .3s;
+            backdrop-filter: blur(12px);
+            transition: .35s ease;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: var(--primary);
+        .card:hover, .testimonial-card:hover, .job-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 0 22px rgba(0,234,255,0.25);
         }
 
-        .testimonial-card {
-            padding: 25px;
-            background: var(--card);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            text-align: center;
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 10px;
         }
 
-        .job-box {
-            padding: 25px;
-            background: var(--card);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-        }
-
+        /* CONTACT ----------------------------------------------------- */
         .contact-box {
             max-width: 650px;
-            background: var(--card);
+            background: var(--glass);
             padding: 40px;
             border-radius: 20px;
             border: 1px solid var(--border);
             margin: auto;
+            backdrop-filter: blur(15px);
         }
 
         input, textarea, select {
@@ -169,20 +195,22 @@
             margin-bottom: 12px;
             border-radius: 10px;
             border: 1px solid var(--border);
-            background: var(--bg);
+            background: #0b1220;
             color: var(--text);
         }
 
         .btn {
             padding: 14px 30px;
             border-radius: 50px;
-            background: var(--primary);
+            background: linear-gradient(to right, var(--primary), var(--accent));
             color: white;
             border: none;
             cursor: pointer;
             font-weight: 600;
+            width: 100%;
         }
 
+        /* FLOAT BUTTONS ---------------------------------------------- */
         .floating {
             position: fixed;
             right: 20px;
@@ -190,13 +218,12 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            z-index: 2000;
+            z-index: 999;
         }
 
         .float-btn {
             width: 55px;
             height: 55px;
-            background: #25d366;
             border-radius: 50%;
             display: grid;
             place-items: center;
@@ -205,6 +232,7 @@
             text-decoration: none;
         }
 
+        .float-btn { background: #25d366; }
         .call-btn { background: #007aff; }
         .mail-btn { background: #ef4444; }
 
@@ -213,12 +241,12 @@
             text-align: center;
             color: var(--muted);
             border-top: 1px solid var(--border);
+            margin-top: 80px;
         }
 
         @media (max-width: 768px) {
             .about-grid { grid-template-columns: 1fr; }
             nav ul { display: none; }
-            .hero { padding: 130px 20px 80px; }
         }
     </style>
 </head>
@@ -238,57 +266,58 @@
     </div>
 </nav>
 
-<section class="hero">
+<section class="hero" data-aos="fade-up">
     <h1>We Build High-End Digital Experiences</h1>
     <p>Premium Websites • SEO • CRM Automations • Branding • Growth Systems</p>
-    <div style="margin-top: 25px; background: var(--accent); padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: 600;">🔥 Demo Available</div>
+    <div class="demo-badge">🔥 Demo Available</div>
 </section>
 
-<section id="about">
+<section id="about" data-aos="fade-up">
     <h2 class="title">About The Code Craft Labs</h2>
+
     <div class="about-grid">
-        <img src="https://i.ibb.co/KxS8h8dc/satyam-digital.jpg" alt="Founder" width="720" height="438" />
+        <img src="https://i.ibb.co/KxS8h8dc/satyam-digital.jpg" alt="Founder">
 
         <div>
-            <h3 style="color: var(--primary); margin-bottom: 10px;">Meet Satyam — Founder</h3>
+            <h3 style="color: var(--accent);">Meet Satyam — Founder</h3>
             <p>I specialize in building <b>high-performance, automated digital systems</b> for businesses across India.</p>
             <p>We work with Real Estate, Hotels, Medical, Ecommerce, SaaS & Local Service Businesses — delivering websites, automations, CRM setups & SEO that bring real results.</p>
-            <p style="margin-top: 10px;">Our mission? <b>Make your business run on autopilot.</b></p>
+            <p>Our mission? <b>Make your business run on autopilot.</b></p>
         </div>
     </div>
 </section>
 
-<section id="services">
+<section id="services" data-aos="fade-up">
     <h2 class="title">Our Services</h2>
 
     <div class="grid">
         <div class="card">
-            <img src="https://i.ibb.co/YmVnwB3/webdev.webp" />
+            <img src="https://i.ibb.co/YmVnwB3/webdev.webp">
             <h3>Web Development</h3>
             <p>High-speed, professional websites tailored for brands.</p>
         </div>
 
         <div class="card">
-            <img src="https://i.ibb.co/pjMXBwgb/load-153679281.webp" />
+            <img src="https://i.ibb.co/pjMXBwgb/load-153679281.webp">
             <h3>Landing Pages</h3>
             <p>High-converting landing pages for ads & lead generation.</p>
         </div>
 
         <div class="card">
-            <img src="https://i.ibb.co/GvNbG28S/Automation-crm.png" />
+            <img src="https://i.ibb.co/GvNbG28S/Automation-crm.png">
             <h3>Automations</h3>
             <p>CRM + WhatsApp + Email workflow automation.</p>
         </div>
 
         <div class="card">
-            <img src="https://i.ibb.co/DP51zrLg/speed.jpg" />
+            <img src="https://i.ibb.co/DP51zrLg/speed.jpg">
             <h3>Speed & SEO</h3>
             <p>Speed boost + ranking improvements.</p>
         </div>
     </div>
 </section>
 
-<section id="projects">
+<section id="projects" data-aos="fade-up">
     <h2 class="title">Projects</h2>
 
     <div class="grid">
@@ -320,7 +349,7 @@
     </div>
 </section>
 
-<section id="testimonials">
+<section id="testimonials" data-aos="fade-up">
     <h2 class="title">Client Testimonials</h2>
     <div class="grid">
 
@@ -342,7 +371,7 @@
     </div>
 </section>
 
-<section id="hiring">
+<section id="hiring" data-aos="fade-up">
     <h2 class="title">We Are Hiring</h2>
 
     <div class="grid">
@@ -363,7 +392,7 @@
     </div>
 </section>
 
-<section id="apply">
+<section id="apply" data-aos="fade-up">
     <h2 class="title">Apply Now</h2>
 
     <div class="contact-box">
@@ -383,13 +412,13 @@
 
             <textarea name="message" rows="5" placeholder="Tell us about your skills..." required></textarea>
 
-            <button class="btn" style="width:100%;">Submit Application</button>
+            <button class="btn">Submit Application</button>
 
         </form>
     </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-aos="fade-up">
     <h2 class="title">Contact Us</h2>
 
     <div class="contact-box">
@@ -400,12 +429,13 @@
 
             <textarea name="message" rows="5" placeholder="Your Project Details..." required></textarea>
 
-            <button class="btn" style="width: 100%;">Send Message</button>
+            <button class="btn">Send Message</button>
 
         </form>
     </div>
 </section>
 
+<!-- Floating Buttons -->
 <div class="floating">
     <a class="float-btn" href="https://wa.me/919074827704?text=Hi%20I%20want%20a%20website" target="_blank">💬</a>
     <a class="float-btn call-btn" href="tel:+919074827704">📞</a>
@@ -416,5 +446,9 @@
     © 2026 The Code Craft Labs — Premium IT Solutions
 </footer>
 
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration: 900});</script>
+
 </body>
-</html> -------------------------------------------
+</html>
