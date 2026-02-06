@@ -5,6 +5,426 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Code Craft Labs | Premium IT Agency</title>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Code Craft Labs | Premium IT Agency</title>
+
+    <!-- SEO -->
+    <meta name="description" content="The Code Craft Labs - High-end Websites, CRM Automation, SEO & Marketing Systems for Indian Businesses.">
+    <meta name="keywords" content="web development, SEO, branding, automations, CRM, landing pages, marketing">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #030712;
+            --card: #0f172a;
+            --border: rgba(255,255,255,0.08);
+            --primary: #6366f1;
+            --accent: #06b6d4;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            font-family: Poppins, sans-serif;
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(3,7,18,0.7);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            z-index: 999;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: floatText 3s infinite ease-in-out;
+        }
+
+        @keyframes floatText {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+            100% { transform: translateY(0); }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: var(--muted);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 180px 20px 120px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(99,102,241,0.2), transparent);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+        }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about-grid img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+        }
+
+        .testimonial-card {
+            padding: 25px;
+            background: var(--card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .job-box {
+            padding: 25px;
+            background: var(--card);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-box {
+            max-width: 650px;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin: auto;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .floating {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 2000;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            background: #25d366;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .call-btn { background: #007aff; }
+        .mail-btn { background: #ef4444; }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+            .hero { padding: 130px 20px 80px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="logo">The Code Craft Labs</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#hiring">Hiring</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>We Build High-End Digital Experiences</h1>
+    <p>Premium Websites • SEO • CRM Automations • Branding • Growth Systems</p>
+    <div style="margin-top: 25px; background: var(--accent); padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: 600;">🔥 Demo Available</div>
+</section>
+
+<section id="about">
+    <h2 class="title">About The Code Craft Labs</h2>
+    <div class="about-grid">
+        <img src="https://i.ibb.co/KxS8h8dc/satyam-digital.jpg" alt="Founder" width="720" height="438" />
+
+        <div>
+            <h3 style="color: var(--primary); margin-bottom: 10px;">Meet Satyam — Founder</h3>
+            <p>I specialize in building <b>high-performance, automated digital systems</b> for businesses across India.</p>
+            <p>We work with Real Estate, Hotels, Medical, Ecommerce, SaaS & Local Service Businesses — delivering websites, automations, CRM setups & SEO that bring real results.</p>
+            <p style="margin-top: 10px;">Our mission? <b>Make your business run on autopilot.</b></p>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2 class="title">Our Services</h2>
+
+    <div class="grid">
+        <div class="card">
+            <img src="https://i.ibb.co/YmVnwB3/webdev.webp" />
+            <h3>Web Development</h3>
+            <p>High-speed, professional websites tailored for brands.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co/pjMXBwgb/load-153679281.webp" />
+            <h3>Landing Pages</h3>
+            <p>High-converting landing pages for ads & lead generation.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co/GvNbG28S/Automation-crm.png" />
+            <h3>Automations</h3>
+            <p>CRM + WhatsApp + Email workflow automation.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co/DP51zrLg/speed.jpg" />
+            <h3>Speed & SEO</h3>
+            <p>Speed boost + ranking improvements.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="title">Projects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>INBIX 2025 Conference</h3>
+            <p>Bioinformatics conference platform.</p>
+            <a class="btn" href="https://inbix2025.icmrnirth.org/" target="_blank">View Live</a>
+        </div>
+
+        <div class="card">
+            <h3>Hotels in Spiti Valley</h3>
+            <p>Hotel booking & CRM automation.</p>
+            <a class="btn" href="https://hotelspitivalley.com/" target="_blank">View Live</a>
+        </div>
+
+        <div class="card">
+            <h3>Bungalows in Lonavala</h3>
+            <p>Real-estate lead generation system.</p>
+            <a class="btn" href="https://www.bungalowsinlonavala.com/" target="_blank">View Live</a>
+        </div>
+
+        <div class="card">
+            <h3>Dr. Falke Medical</h3>
+            <p>Medical website with booking & analytics.</p>
+            <a class="btn" href="https://drfalke.in/" target="_blank">View Live</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="testimonials">
+    <h2 class="title">Client Testimonials</h2>
+    <div class="grid">
+
+        <div class="testimonial-card">
+            <p>“Website speed went from 32 to 92. Amazing work!”</p>
+            <h4>— Amit Yadav</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“Super clean UI + very fast delivery. Loved it.”</p>
+            <h4>— Priya Singh</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <p>“Automation saved us 20+ hours every week.”</p>
+            <h4>— Rahul Verma</h4>
+        </div>
+
+    </div>
+</section>
+
+<section id="hiring">
+    <h2 class="title">We Are Hiring</h2>
+
+    <div class="grid">
+        <div class="job-box">
+            <h3>Web Developer (Internship)</h3>
+            <p>Work on real-life projects.</p>
+        </div>
+
+        <div class="job-box">
+            <h3>SEO Executive</h3>
+            <p>Handle real SEO campaigns.</p>
+        </div>
+
+        <div class="job-box">
+            <h3>Digital Marketing Intern</h3>
+            <p>Learn ads + campaigns + strategy.</p>
+        </div>
+    </div>
+</section>
+
+<section id="apply">
+    <h2 class="title">Apply Now</h2>
+
+    <div class="contact-box">
+        <form action="https://formsubmit.co/thecodecraft97G@gmail.com" method="POST" enctype="multipart/form-data">
+
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <select required>
+                <option value="">Select Role</option>
+                <option>Web Developer Intern</option>
+                <option>SEO Executive</option>
+                <option>Digital Marketing Intern</option>
+            </select>
+
+            <input type="file" name="Resume" accept=".pdf,.doc,.docx" required>
+
+            <textarea name="message" rows="5" placeholder="Tell us about your skills..." required></textarea>
+
+            <button class="btn" style="width:100%;">Submit Application</button>
+
+        </form>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="title">Contact Us</h2>
+
+    <div class="contact-box">
+        <form action="https://formsubmit.co/thecodecraft97G@gmail.com" method="POST">
+
+            <input type="text" name="fullname" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <textarea name="message" rows="5" placeholder="Your Project Details..." required></textarea>
+
+            <button class="btn" style="width: 100%;">Send Message</button>
+
+        </form>
+    </div>
+</section>
+
+<div class="floating">
+    <a class="float-btn" href="https://wa.me/919074827704?text=Hi%20I%20want%20a%20website" target="_blank">💬</a>
+    <a class="float-btn call-btn" href="tel:+919074827704">📞</a>
+    <a class="float-btn mail-btn" href="mailto:thecodecraft97G@gmail.com">✉</a>
+</div>
+
+<footer>
+    © 2026 The Code Craft Labs — Premium IT Solutions
+</footer>
+
+</body>
+</html> -------------------------------------------
 
     <!-- SEO -->
     <meta name="description" content="The Code Craft Labs - High-end Websites, CRM Automation, SEO & Marketing Systems for Indian Businesses.">
