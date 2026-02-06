@@ -1,295 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Code Craft Labs – Digital Innovation</title>
 
-  <title>The Code Craft – Crafting Digital Experiences</title>
+<meta name="description" content="The Code Craft Labs builds premium websites, automation, and digital products for future-ready businesses.">
+<meta name="keywords" content="Code Craft Labs, Web Development, IT Services, WordPress, UI UX, Automation">
+<meta name="author" content="The Code Craft Labs">
 
-  <!-- SEO -->
-  <meta name="description" content="The Code Craft builds high-performance websites, optimized for speed, security and business growth." />
-  <meta name="keywords" content="The Code Craft, Web Development, WordPress, Speed Optimization, Digital Agency" />
-  <meta name="author" content="The Code Craft" />
-  <meta name="robots" content="index, follow" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0b0f19;
+  color:#eaeaea;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
-    }
+/* VIDEO HERO */
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+.hero video{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.45);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+.hero h1{
+  font-size:3.5rem;
+  font-weight:700;
+  letter-spacing:1px;
+}
+.hero p{
+  font-size:1.3rem;
+  opacity:.9;
+}
+.hero span{
+  margin-top:8px;
+  font-size:1rem;
+  opacity:.7;
+}
 
-    /* HERO */
-    header {
-      background: linear-gradient(135deg, #141e30, #243b55);
-      color: #e0e0e0;
-      text-align: center;
-      padding: 90px 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-    }
+/* BUTTONS */
+.btn{
+  margin-top:25px;
+  padding:14px 34px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#00f2fe,#4facfe);
+  color:#000;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 0 25px rgba(79,172,254,.6);
+  transition:.3s;
+}
+.btn:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 0 40px rgba(79,172,254,1);
+}
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #b0b0b0; /* soft light grey */
-      text-shadow: 0 0 8px #b0b0b0;
-    }
+/* SECTIONS */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:90px 20px;
+}
+section h2{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:50px;
+}
 
-    header p {
-      font-size: 1.4rem;
-      margin-bottom: 5px;
-      color: #c0c0c0;
-    }
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:35px;
+  text-align:center;
+  transition:.4s;
+  border:1px solid rgba(255,255,255,.1);
+}
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 60px rgba(0,242,254,.35);
+}
+.card h3{
+  margin-bottom:12px;
+  color:#4facfe;
+}
+.card p{
+  font-size:.95rem;
+  opacity:.85;
+}
 
-    header span {
-      font-size: 1.1rem;
-      opacity: 0.8;
-      color: #a8a8a8;
-    }
+/* ABOUT */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  font-size:1.1rem;
+  line-height:1.9;
+  opacity:.9;
+}
 
-    .btn {
-      display: inline-block;
-      margin: 18px 8px 0;
-      padding: 12px 30px;
-      background: #b0b0b0;
-      color: #121212;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: 0.3s ease;
-      box-shadow: 0 0 10px #b0b0b0;
-    }
+/* CONTACT */
+form{
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+input,textarea{
+  padding:15px;
+  border-radius:10px;
+  border:none;
+  background:#141a2b;
+  color:#fff;
+}
+button{
+  padding:15px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#00f2fe,#4facfe);
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+button:hover{
+  transform:scale(1.05);
+}
 
-    .btn:hover {
-      background: #999999;
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #999999;
-      color: #fff;
-    }
+/* FOOTER */
+footer{
+  background:#060912;
+  padding:25px;
+  text-align:center;
+  font-size:14px;
+  opacity:.7;
+}
 
-    /* SECTION */
-    section {
-      max-width: 1100px;
-      margin: 70px auto;
-      padding: 0 20px;
-    }
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
 
-    h2 {
-      text-align: center;
-      font-size: 2.3rem;
-      margin-bottom: 45px;
-      color: #b0b0b0;
-      text-shadow: 0 0 8px #b0b0b0;
-    }
-
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .service-box {
-      background: #1e1e1e;
-      padding: 30px 25px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 8px 18px rgba(176,176,176,0.2);
-      transition: 0.3s ease;
-      border: 1px solid #b0b0b0;
-    }
-
-    .service-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 30px rgba(176,176,176,0.5);
-      background: #272727;
-    }
-
-    .service-box h3 {
-      font-size: 1.35rem;
-      color: #b0b0b0;
-      margin-bottom: 12px;
-      text-shadow: 0 0 6px #b0b0b0;
-    }
-
-    .service-box p {
-      font-size: 1rem;
-      color: #ccc;
-    }
-
-    /* ABOUT */
-    .about {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #ccc;
-      line-height: 1.8;
-      border-left: 4px solid #b0b0b0;
-      padding-left: 20px;
-      box-shadow: 0 0 15px #b0b0b0;
-      background: #1f1f1f;
-      border-radius: 10px;
-    }
-
-    /* CONTACT */
-    form {
-      max-width: 560px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 14px;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #b0b0b0;
-      background: #121212;
-      color: #e0e0e0;
-      box-shadow: inset 0 0 5px #b0b0b0;
-      transition: border-color 0.3s ease;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #999999;
-      outline: none;
-      box-shadow: 0 0 8px #999999;
-    }
-
-    button {
-      padding: 14px;
-      background: #b0b0b0;
-      color: #121212;
-      border: none;
-      border-radius: 6px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 0 10px #b0b0b0;
-    }
-
-    button:hover {
-      background: #999999;
-      color: #fff;
-      box-shadow: 0 0 20px #999999;
-    }
-
-    footer {
-      background: #141e30;
-      color: #b0b0b0;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 70px;
-      box-shadow: 0 -4px 15px rgba(176,176,176,0.4);
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+@media(max-width:768px){
+.hero h1{font-size:2.4rem}
+}
+</style>
 </head>
 
 <body>
 
 <!-- HERO -->
-<header>
-  <h1>The Code Craft</h1>
-  <p>We Craft Powerful Digital Experiences</p>
-  <span>Ideas to Solutions</span><br>
+<div class="hero">
+  <video autoplay muted loop>
+    <source src="https://cdn.coverr.co/videos/coverr-working-on-code-1607/1080p.mp4" type="video/mp4">
+  </video>
 
-  <a href="tel:+919074827704" class="btn">Call Now</a>
-  <a href="https://wa.me/919074827704" class="btn" target="_blank">WhatsApp</a>
-</header>
+  <div class="hero-content">
+    <h1>The Code Craft Labs</h1>
+    <p>Crafting Future-Ready Digital Solutions</p>
+    <span>Web • Automation • UI/UX • Innovation</span>
+    <a href="#contact" class="btn">Start Your Project</a>
+  </div>
+</div>
 
 <!-- SERVICES -->
-<section>
-  <h2>Our Services</h2>
-
-  <div class="services">
-    <div class="service-box">
-      <h3>WordPress Development</h3>
-      <p>Custom WordPress websites focused on performance, security, and scalability.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>Website Care</h3>
-      <p>Ongoing maintenance, updates, and monitoring to keep your site running smoothly.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>Speed & Security</h3>
-      <p>Fast-loading websites with strong security and optimization best practices.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>CRM & Automation</h3>
-      <p>Lead management and automation using HubSpot, Zoho and smart forms.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>Custom Websites</h3>
-      <p>Tailor-made websites designed specifically for your business goals.</p>
-    </div>
-
-    <div class="service-box">
-      <h3>UI / UX Design</h3>
-      <p>Clean, modern and user-friendly designs that improve engagement and conversion.</p>
-    </div>
-  </div>
+<section class="fade">
+<h2>Our Services</h2>
+<div class="services">
+  <div class="card"><h3>Web Development</h3><p>High-performance websites built for speed, security and growth.</p></div>
+  <div class="card"><h3>WordPress Solutions</h3><p>Custom themes, plugins and enterprise-grade WordPress builds.</p></div>
+  <div class="card"><h3>UI / UX Design</h3><p>Modern, clean and conversion-focused user experiences.</p></div>
+  <div class="card"><h3>Automation</h3><p>CRM, workflows and business automation that saves time.</p></div>
+  <div class="card"><h3>Maintenance</h3><p>Ongoing support, security, backups and monitoring.</p></div>
+  <div class="card"><h3>Consulting</h3><p>Technology strategy & digital growth planning.</p></div>
+</div>
 </section>
 
 <!-- ABOUT -->
-<section>
-  <h2>About The Code Craft</h2>
-  <div class="about">
-    <p>
-      The Code Craft is a digital agency focused on building clean, modern and
-      high-performance web solutions. We help businesses turn ideas into scalable
-      digital products with strong emphasis on speed, usability and quality.
-    </p>
-  </div>
+<section class="fade">
+<h2>About Us</h2>
+<div class="about">
+The Code Craft Labs is a modern IT services company focused on building
+scalable, secure and visually stunning digital products.
+We help businesses transform ideas into high-impact digital solutions.
+</div>
 </section>
 
 <!-- CONTACT -->
-<section>
-  <h2>Contact Us</h2>
-
-  <form id="contactForm">
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea rows="4" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+<section id="contact" class="fade">
+<h2>Contact Us</h2>
+<form onsubmit="event.preventDefault();alert('Thank you! We will contact you soon.')">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <textarea rows="4" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
 </section>
 
 <footer>
-  © 2026 The Code Craft • All Rights Reserved
+© 2026 The Code Craft Labs • Crafted with ❤️
 </footer>
 
 <script>
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Message sent successfully. We will contact you soon.");
+const fades=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('show');
   });
+},{threshold:0.2});
+fades.forEach(f=>obs.observe(f));
 </script>
 
 </body>
 </html>
-
