@@ -270,23 +270,33 @@
 
 <body>
 
-<nav>
-    <div class="logo">
-    <video autoplay loop muted playsinline class="logo-video">
-        <source src="https://thecodecraftlabs.github.io/thecodecraftlabs/codecraftlologo.mp4" type="video/mp4">
-    </video>
-</div>
+<header class="navbar">
+    <div class="nav-inner">
 
+        <!-- 🔥 Animated Video Logo -->
+        <a href="#home" class="logo">
+            <video autoplay loop muted playsinline class="logo-video">
+                <source src="codecraftlologo.mp4" type="video/mp4">
+            </video>
+        </a>
 
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#hiring">Hiring</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <!-- 🔹 Navigation Menu -->
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#hiring">Hiring</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- 🔹 Mobile Menu Button -->
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+
     </div>
-</nav>
+</header>
+
 
 <section class="hero" data-aos="fade-up">
     <h1>We Build High-End Digital Experiences</h1>
