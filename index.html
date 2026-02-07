@@ -248,12 +248,17 @@
             .about-grid { grid-template-columns: 1fr; }
             nav ul { display: none; }
         }
-.logo-video {
-    height: 45px;   /* navbar size perfect */
-    width: auto;
-    border-radius: 6px;   /* optional smooth edges */
-    object-fit: contain;
+..logo {
+    display: flex;
+    align-items: center;
 }
+
+.logo-video {
+    height: 45px;       /* navbar size perfect */
+    width: auto;
+    border-radius: 6px; /* smooth rounded video logo */
+}
+
 @media (max-width: 768px) {
     .logo-video {
         height: 38px;
