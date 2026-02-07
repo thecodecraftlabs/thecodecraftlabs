@@ -302,27 +302,24 @@
 </head>
 
 <body>
+<nav class="navbar">
+    <div class="logo-wrapper">
+        <video autoplay loop muted playsinline class="logo-video">
+            <source src="https://thecodecraftlabs.github.io/thecodecraftlabs/codecraftlologo.mp4" type="video/mp4">
+        </video>
+    </div>
 
-<nav>
-<div class="navbar">
-    
-    <!-- LOGO -->
-    <video autoplay loop muted playsinline class="logo-video">
-        <source src="https://thecodecraftlabs.github.io/thecodecraftlabs/codecraftlologo.mp4" type="video/mp4">
-    </video>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <!-- NAV LINKS -->
-    <div class="nav-links">
+    <div class="nav-links" id="navMenu">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#hiring">Hiring</a>
         <a href="#contact">Contact</a>
     </div>
-
-</div>
-
 </nav>
+
 
 <section class="hero" data-aos="fade-up">
     <h1>We Build High-End Digital Experiences</h1>
@@ -509,4 +506,10 @@
 <script>AOS.init({duration: 900});</script>
 
 </body>
+    <script>
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+
 </html>--
