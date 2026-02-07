@@ -60,66 +60,27 @@
     z-index: 999;
 }
 
-/* Main Logo Perfect Circle */
+/* PERFECT LOGO SIZE (Desktop) */
 .logo-wrapper {
-    width: 85px;
-    height: 125px;
-    border-radius: 25%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.08);
-    border: 2px solid rgba(116, 52, 255, 0.5);
-    box-shadow: 0 0 12px rgba(116, 52, 255, 0.55);
+    width: 45px;
+    height: 55px;
 }
-
-/* Video settings */
 .logo-video {
-    width: 140%;          /* 🟣 ZOOM so logo becomes readable */
-    height: 140%;
-    object-fit: cover;
-    transform: translateX(-12%) translateY(-8%);  /* 🟣 Adjust video position for perfect center */
+     width: 100%;
+    height: 100%;
     border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #7434ff;
+    box-shadow: 0 0 8px rgba(116, 52, 255, 0.4);
+    animation: glowPulse 2.5s infinite ease-in-out;
 }
 
-/* Mobile Fix */
-@media (max-width: 600px) {
-    .logo-wrapper {
-        width: 72px;
-        height: 172px;
-        box-shadow: 0 0 10px rgba(116,52,255,0.5);
-    }
-
-    .logo-video {
-        width: 160%;     /* 🟣 Bigger zoom on mobile */
-        height: 160%;
-        transform: translateX(-18%) translateY(-10%);
-    }
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 6px #7434ff; }
+    50% { box-shadow: 0 0 18px #7434ff; }
+    100% { box-shadow: 0 0 6px #7434ff; }
 }
 
-/* Extra Small Phones */
-@media (max-width: 400px) {
-    .logo-wrapper {
-        width: 65px;
-        height: 65px;
-    }
-
-    .logo-video {
-        width: 170%;
-        height: 170%;
-        transform: translateX(-20%) translateY(-12%);
-    }
-}
-
-
-/* EXTRA SMALL MOBILE */
-@media (max-width: 400px) {
-    .logo-wrapper {
-        width: 46px;
-        height: 46px;
-    }
-}
 
 
 
@@ -140,6 +101,52 @@
 .nav-links a:hover {
     color: #fff;
 }
+
+/* MOBILE MENU ICON */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .logo-wrapper {
+        width: 755px;
+        height: 75px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 180px;
+        background: #0a1122;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    /* SHOW WHEN ACTIVE */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Show hamburger menu */
+    .menu-btn {
+        display: block;
+    }
+}
+
+
 
 /* MOBILE MENU ICON */
 .menu-btn {
