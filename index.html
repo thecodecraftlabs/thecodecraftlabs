@@ -1,20 +1,3 @@
-**Full Updated Website Code**
-
-Below is the complete, enhanced HTML code for your premium website. I've integrated the video logo ("codecraftlologo.mp4") into the header's logo section, ensuring it fits perfectly within the existing .logo div without disrupting the layout or content. The video is sized appropriately (height: 45px for desktop, responsive for mobile) and positioned alongside the text. I've also added more premium enhancements like additional hover effects, subtle animations (e.g., glowing borders on cards, enhanced GSAP scroll animations), a particle background for a trending look, and an AI chat bot (simulated with basic JS for demo). The site remains fully mobile-responsive, with good content intact. No major content changes—only visual and interactive improvements for a stunning, high-end feel.
-
-- **Video Logo Integration**: Replaced the text-only logo with a video element inside the .logo div. It autoplays, loops, and is muted for smooth performance.
-- **Enhancements Added**:
-  - Particle background using Particles.js for a dynamic, premium effect.
-  - More hover animations (e.g., card glows, button scales, image zooms).
-  - GSAP scroll-triggered animations for sections and cards.
-  - AI Chat Bot: A fixed chatbot widget with toggle functionality (basic responses for demo).
-  - Improved mobile menu toggle (hamburger animation).
-  - Additional CSS for better glassmorphism and gradients.
-- **Mobile Responsiveness**: Fully optimized—grids stack on mobile, nav hides/shows, chatbot resizes.
-- **Content**: Kept exactly as in your provided code, with no alterations.
-- **Notes**: Replace "codecraftlologo.mp4" with your actual video file path. Test in a browser; ensure video loads correctly. If you need further tweaks, use the suggested prompt below.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,14 +12,9 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Particles.js for Premium Background Effect -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <style>
         :root {
@@ -48,7 +26,6 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             --text: #f1f5f9;
             --muted: #94a3b8;
             --glass: rgba(255,255,255,0.05);
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
         }
 
         body {
@@ -57,17 +34,6 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             font-family: Poppins, sans-serif;
             color: var(--text);
             scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        /* Particle Background */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
         }
 
         /* NAVBAR --------------------------------------------------- */
@@ -80,7 +46,6 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             border-bottom: 1px solid var(--border);
             padding: 15px 0;
             z-index: 999;
-            transition: all 0.3s ease;
         }
 
         .nav-inner {
@@ -95,24 +60,15 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            background: var(--gradient);
+            background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             color: transparent;
             animation: floatText 3s infinite;
-            display: flex;
-            align-items: center;
         }
 
         @keyframes floatText {
             0%,100% { transform: translateY(0); }
             50% { transform: translateY(-4px); }
-        }
-
-        .logo-video {
-            height: 45px;
-            width: auto;
-            border-radius: 6px;
-            margin-right: 10px;
         }
 
         nav ul {
@@ -126,84 +82,38 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             font-weight: 500;
             text-decoration: none;
             transition: .3s;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
         }
 
         nav ul li a:hover {
             color: var(--accent);
         }
 
-        .menu-btn {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-btn span {
-            width: 25px;
-            height: 3px;
-            background: var(--text);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        .menu-btn.active span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 5px); }
-        .menu-btn.active span:nth-child(2) { opacity: 0; }
-        .menu-btn.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -5px); }
-
         /* HERO ----------------------------------------------------- */
         .hero {
             padding: 180px 20px 130px;
             text-align: center;
             background: radial-gradient(circle at center, rgba(0,234,255,0.12), transparent 60%);
-            position: relative;
         }
 
         .hero h1 {
             font-size: clamp(2.6rem, 5vw, 4.2rem);
             font-weight: 800;
             line-height: 1.2;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            color: transparent;
         }
 
         .hero p {
             color: var(--muted);
             font-size: 1.1rem;
-            margin: 20px 0;
         }
 
         .demo-badge {
             margin-top: 25px;
-            background: var(--gradient);
+            background: var(--accent);
             padding: 10px 25px;
             border-radius: 30px;
             font-weight: 600;
             display: inline-block;
-            color: white;
-            box-shadow: 0 0 20px rgba(0,234,255,0.5);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%,100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            color: black;
         }
 
         /* SECTIONS -------------------------------------------------- */
@@ -218,9 +128,6 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             font-size: 2.7rem;
             font-weight: 800;
             margin-bottom: 60px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            color: transparent;
         }
 
         /* ABOUT ------------------------------------------------------ */
@@ -238,11 +145,6 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             border-radius: 20px;
             border: 1px solid var(--border);
             box-shadow: 0 0 30px rgba(0,255,255,0.15);
-            transition: transform 0.3s;
-        }
-
-        .about-grid img:hover {
-            transform: scale(1.05);
         }
 
         /* UNIVERSAL GRIDS --------------------------------------------- */
@@ -260,23 +162,6 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             border: 1px solid var(--border);
             backdrop-filter: blur(12px);
             transition: .35s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before, .testimonial-card::before, .job-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,234,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .card:hover::before, .testimonial-card:hover::before, .job-box:hover::before {
-            left: 100%;
         }
 
         .card:hover, .testimonial-card:hover, .job-box:hover {
@@ -291,11 +176,6 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 10px;
-            transition: transform 0.3s;
-        }
-
-        .card:hover img {
-            transform: scale(1.1);
         }
 
         /* CONTACT ----------------------------------------------------- */
@@ -317,28 +197,17 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             border: 1px solid var(--border);
             background: #0b1220;
             color: var(--text);
-            transition: border-color 0.3s;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            border-color: var(--accent);
-            outline: none;
         }
 
         .btn {
             padding: 14px 30px;
             border-radius: 50px;
-            background: var(--gradient);
+            background: linear-gradient(to right, var(--primary), var(--accent));
             color: white;
             border: none;
             cursor: pointer;
             font-weight: 600;
             width: 100%;
-            transition: transform 0.3s;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
         }
 
         /* FLOAT BUTTONS ---------------------------------------------- */
@@ -361,86 +230,11 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             color: white;
             font-size: 24px;
             text-decoration: none;
-            transition: transform 0.3s;
         }
 
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .whatsapp { background: #25d366; }
-        .call { background: #007aff; }
-        .mail { background: #ef4444; }
-
-        /* AI Chat Bot */
-        .chatbot {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 350px;
-            height: 500px;
-            background: var(--card);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            box-shadow: 0 0 20px rgba(0,234,255,0.2);
-            display: none;
-            flex-direction: column;
-            z-index: 1000;
-        }
-
-        .chatbot-header {
-            background: var(--gradient);
-            padding: 15px;
-            border-radius: 20px 20px 0 0;
-            color: white;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .chatbot-body {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            color: var(--text);
-        }
-
-        .chatbot-input {
-            padding: 10px;
-            border-top: 1px solid var(--border);
-            display: flex;
-        }
-
-        .chatbot-input input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            color: var(--text);
-        }
-
-        .chatbot-input button {
-            background: var(--accent);
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: black;
-            cursor: pointer;
-        }
-
-        .chat-toggle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--gradient);
-            display: grid;
-            place-items: center;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1001;
-        }
+        .float-btn { background: #25d366; }
+        .call-btn { background: #007aff; }
+        .mail-btn { background: #ef4444; }
 
         footer {
             padding: 40px 20px;
@@ -450,68 +244,29 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
             margin-top: 80px;
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .about-grid { grid-template-columns: 1fr; }
             nav ul { display: none; }
-            .menu-btn { display: flex; }
-            .hero { padding: 120px 20px 80px; }
-            .title { font-size: 2rem; }
-            .grid { grid-template-columns: 1fr; }
-            .floating { right: 10px; bottom: 10px; }
-            .chatbot { width: 90%; height: 400px; right: 5%; bottom: 80px; }
-            .logo-video { height: 38px; }
-            nav.nav-small .logo-video { height: 32px !important; }
-        }
-
-        nav.nav-small {
-            padding: 8px 0 !important;
-            background: rgba(3, 7, 18, 0.92);
-            backdrop-filter: blur(20px);
-        }
-
-        nav.nav-small .logo-video {
-            height: 38px !important;
         }
     </style>
 </head>
 
 <body>
 
-<!-- Particle Background -->
-<div id="particles-js"></div>
-
-<header class="navbar">
+<nav>
     <div class="nav-inner">
-        <!-- 🔥 Animated Video Logo -->
-        <a href="#home" class="logo">
-            <video autoplay loop muted playsinline class="logo-video">
-                <source src="codecraftlologo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            The Code Craft Labs
-        </a>
-
-        <!-- 🔹 Navigation Menu -->
-        <nav class="nav-links">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#hiring">Hiring</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!-- 🔹 Mobile Menu Button -->
-        <div class="menu-btn" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="logo">The Code Craft Labs</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#hiring">Hiring</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
-</header>
+</nav>
 
-<section class="hero" id="home" data-aos="fade-up">
+<section class="hero" data-aos="fade-up">
     <h1>We Build High-End Digital Experiences</h1>
     <p>Premium Websites • SEO • CRM Automations • Branding • Growth Systems</p>
     <div class="demo-badge">🔥 Demo Available</div>
@@ -519,8 +274,10 @@ Below is the complete, enhanced HTML code for your premium website. I've integra
 
 <section id="about" data-aos="fade-up">
     <h2 class="title">About The Code Craft Labs</h2>
+
     <div class="about-grid">
-        <img src="https://i.ibb.co/KxS8h8dc/satyam-digital.jpg" alt="Founder Satyam">
+        <img src="https://i.ibb.co/KxS8h8dc/satyam-digital.jpg" alt="Founder">
+
         <div>
             <h3 style="color: var(--accent);">Meet Satyam — Founder</h3>
             <p>I specialize in building <b>high-performance, automated digital systems</b> for businesses across India.</p>
