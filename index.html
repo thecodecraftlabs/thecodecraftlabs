@@ -57,14 +57,49 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 80;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: floatText 3s infinite;
-        }
+        /* LOGO VIDEO LEFT PERFECT ALIGN + RESPONSIVE */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* LEFT SIDE FIX */
+}
+
+.logo-video {
+    height: 55px;        /* Desktop perfect height */
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover effect (premium look) */
+.logo-video:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .logo-video {
+        height: 48px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .logo-video {
+        height: 40px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .logo-video {
+        height: 34px;
+    }
+}
 
         @keyframes floatText {
             0%,100% { transform: translateY(0); }
