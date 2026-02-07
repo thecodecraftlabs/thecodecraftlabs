@@ -36,88 +36,94 @@
             scroll-behavior: smooth;
         }
 
-        /* NAVBAR --------------------------------------------------- */
-/* NAVBAR */
+/* MAIN NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
+    padding: 12px 30px;
     background: #050b18;
     position: sticky;
     top: 0;
     z-index: 999;
-    backdrop-filter: blur(10px);
 }
 
-/* ---- LOGO VIDEO (CIRCLE + GLOW + ANIMATION) ---- */
+/* PERFECT LOGO SIZE (Desktop) */
 .logo-wrapper {
-    position: relative;
-    width:2px;
-    height: 5px;
+    width: 55px;
+    height: 55px;
 }
 
 .logo-video {
-    width: 50%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(120, 0, 255, 0.6);
-    box-shadow: 0 0 18px rgba(120, 0, 255, 0.55);
-    animation: float 3s ease-in-out infinite;
+    border: 2px solid #7434ff;
+    box-shadow: 0 0 8px rgba(116, 52, 255, 0.4);
 }
 
-/* Neon rotating ring */
-.logo-wrapper::after {
-    content: "";
-    position: absolute;
-    inset: -6px;
-    border-radius: 50%;
-    border: 3px solid rgba(160, 80, 255, 0.25);
-    animation: rotateGlow 6s linear infinite;
-}
-
-/* Floating effect */
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-    100% { transform: translateY(0); }
-}
-
-/* Rotating glow ring */
-@keyframes rotateGlow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* ---- NAV LINKS ---- */
+/* NAV LINKS */
 .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 35px;
 }
 
 .nav-links a {
-    color: #bdc6d4;
+    color: #cbd5e1;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
-    position: relative;
-    transition: color .3s ease;
+    transition: 0.3s;
 }
 
-/* Hover effect: Neon underline */
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(90deg, #7b2fff, #d06bff);
-    border-radius: 10px;
-    transition: width .3s ease;
+.nav-links a:hover {
+    color: #fff;
 }
 
+/* MOBILE MENU ICON */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .logo-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 180px;
+        background: #0a1122;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    /* SHOW WHEN ACTIVE */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Show hamburger menu */
+    .menu-btn {
+        display: block;
+    }
+}
 
         /* HERO ----------------------------------------------------- */
         .hero {
