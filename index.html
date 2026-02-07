@@ -12,6 +12,9 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -264,6 +267,15 @@
         height: 38px;
     }
 }
+nav.nav-small {
+    padding: 8px 0 !important;
+    background: rgba(3, 7, 18, 0.92);
+    backdrop-filter: blur(20px);
+}
+
+nav.nav-small .logo-video {
+    height: 38px !important;
+}
 
     </style>
 </head>
@@ -481,6 +493,36 @@
 <!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({duration: 900});</script>
+    <script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Universal fade-up animation
+gsap.utils.toArray("section, .card, .title, .about-grid img").forEach(elem => {
+    gsap.from(elem, {
+        scrollTrigger: {
+            trigger: elem,
+            start: "top 85%",
+            toggleActions: "play none none none"
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+    });
+});
+</script>
+
 
 </body>
+    <script>
+window.addEventListener("scroll", function () {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+        nav.classList.add("nav-small");
+    } else {
+        nav.classList.remove("nav-small");
+    }
+});
+</script>
+
 </html>--
