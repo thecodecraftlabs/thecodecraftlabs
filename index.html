@@ -37,31 +37,60 @@
         }
 
         /* NAVBAR --------------------------------------------------- */
-       /* NAVBAR WRAPPER */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 40px;
     background: #050b18;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
 }
 
-/* LOGO VIDEO */
+/* ---- LOGO VIDEO (CIRCLE + GLOW + ANIMATION) ---- */
+.logo-wrapper {
+    position: relative;
+    width: 75px;
+    height: 75px;
+}
+
 .logo-video {
-    height: 160px;       /* Desktop perfect size */
-    width: auto;
-    border-radius: 12px;
-    object-fit: contain;
-    transition: .3s ease;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(120, 0, 255, 0.6);
+    box-shadow: 0 0 18px rgba(120, 0, 255, 0.55);
+    animation: float 3s ease-in-out infinite;
 }
 
-/* Hover glow */
-.logo-video:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 18px rgba(120, 0, 255, 0.45);
+/* Neon rotating ring */
+.logo-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 3px solid rgba(160, 80, 255, 0.25);
+    animation: rotateGlow 6s linear infinite;
 }
 
-/* NAV LINKS */
+/* Floating effect */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+/* Rotating glow ring */
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ---- NAV LINKS ---- */
 .nav-links {
     display: flex;
     gap: 40px;
@@ -72,72 +101,29 @@
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
-    transition: .2s;
+    position: relative;
+    transition: color .3s ease;
+}
+
+/* Hover effect: Neon underline */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #7b2fff, #d06bff);
+    border-radius: 10px;
+    transition: width .3s ease;
 }
 
 .nav-links a:hover {
     color: #ffffff;
-    transform: translateY(-2px);
 }
 
-/* TABLET */
-@media (max-width: 992px) {
-    .logo-video {
-        height: 52px;
-    }
-    .nav-links {
-        gap: 26px;
-    }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 12px 20px;
-    }
-    .logo-video {
-        height: 42px;
-    }
-    .nav-links {
-        gap: 18px;
-    }
-    .nav-links a {
-        font-size: 16px;
-    }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 480px) {
-    .navbar {
-        padding: 10px 16px;
-    }
-    .logo-video {
-        height: 36px;
-    }
-    .nav-links {
-        gap: 14px;
-    }
-    .nav-links a {
-        font-size: 14px;
-    }
-}
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: var(--muted);
-            font-weight: 500;
-            text-decoration: none;
-            transition: .3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent);
-        }
+.nav-links a:hover::after {
+   
 
         /* HERO ----------------------------------------------------- */
         .hero {
