@@ -60,41 +60,58 @@
     z-index: 999;
 }
 
-/* Logo Container - Perfect Size + Always Circle */
+/* Main Logo Perfect Circle */
 .logo-wrapper {
-    width: 58px;
-    height: 58px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.05);
-    border: 1.5px solid rgba(116, 52, 255, 0.4);
-    box-shadow: 0 0 10px rgba(116, 52, 255, 0.4);
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(116, 52, 255, 0.5);
+    box-shadow: 0 0 12px rgba(116, 52, 255, 0.55);
 }
 
-/* Logo Video */
+/* Video settings */
 .logo-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;     /* Prevents stretching */
+    width: 140%;          /* 🟣 ZOOM so logo becomes readable */
+    height: 140%;
+    object-fit: cover;
+    transform: translateX(-12%) translateY(-8%);  /* 🟣 Adjust video position for perfect center */
     border-radius: 50%;
 }
 
-/* MOBILE FIX */
+/* Mobile Fix */
 @media (max-width: 600px) {
     .logo-wrapper {
-        width: 52px;
-        height: 52px;
-        box-shadow: 0 0 6px rgba(116, 52, 255, 0.35);
-        border-width: 1.3px;
+        width: 72px;
+        height: 72px;
+        box-shadow: 0 0 10px rgba(116,52,255,0.5);
     }
 
     .logo-video {
-        object-fit: cover;  /* Ensures perfect circular video */
+        width: 160%;     /* 🟣 Bigger zoom on mobile */
+        height: 160%;
+        transform: translateX(-18%) translateY(-10%);
     }
 }
+
+/* Extra Small Phones */
+@media (max-width: 400px) {
+    .logo-wrapper {
+        width: 65px;
+        height: 65px;
+    }
+
+    .logo-video {
+        width: 170%;
+        height: 170%;
+        transform: translateX(-20%) translateY(-12%);
+    }
+}
+
 
 /* EXTRA SMALL MOBILE */
 @media (max-width: 400px) {
