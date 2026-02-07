@@ -37,74 +37,90 @@
         }
 
         /* NAVBAR --------------------------------------------------- */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(3,7,18,0.75);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border);
-            padding: 15px 0;
-            z-index: 999;
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* LOGO VIDEO LEFT PERFECT ALIGN + RESPONSIVE */
-.logo {
+       /* NAVBAR WRAPPER */
+.navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start; /* LEFT SIDE FIX */
+    padding: 18px 40px;
+    background: #050b18;
 }
 
+/* LOGO VIDEO */
 .logo-video {
-    height: 55px;        /* Desktop perfect height */
+    height: 60px;       /* Desktop perfect size */
     width: auto;
-    border-radius: 8px;
+    border-radius: 12px;
     object-fit: contain;
-    display: block;
-    cursor: pointer;
-    transition: 0.3s ease;
+    transition: .3s ease;
 }
 
-/* Hover effect (premium look) */
+/* Hover glow */
 .logo-video:hover {
-    transform: scale(1.07);
-    box-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(120, 0, 255, 0.45);
 }
 
-/* Tablet */
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: #bdc6d4;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* TABLET */
 @media (max-width: 992px) {
     .logo-video {
-        height: 48px;
+        height: 52px;
+    }
+    .nav-links {
+        gap: 26px;
     }
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+    }
     .logo-video {
-        height: 40px;
+        height: 42px;
+    }
+    .nav-links {
+        gap: 18px;
+    }
+    .nav-links a {
+        font-size: 16px;
     }
 }
 
-/* Small Mobile */
+/* SMALL MOBILE */
 @media (max-width: 480px) {
+    .navbar {
+        padding: 10px 16px;
+    }
     .logo-video {
-        height: 34px;
+        height: 36px;
+    }
+    .nav-links {
+        gap: 14px;
+    }
+    .nav-links a {
+        font-size: 14px;
     }
 }
-
-        @keyframes floatText {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-4px); }
-        }
 
         nav ul {
             list-style: none;
