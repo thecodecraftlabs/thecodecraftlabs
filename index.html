@@ -248,14 +248,29 @@
             .about-grid { grid-template-columns: 1fr; }
             nav ul { display: none; }
         }
+.logo-video {
+    height: 45px;   /* navbar size perfect */
+    width: auto;
+    border-radius: 6px;   /* optional smooth edges */
+    object-fit: contain;
+}
+@media (max-width: 768px) {
+    .logo-video {
+        height: 38px;
+    }
+}
+
     </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="nav-inner">
-        <div class="logo">The Code Craft Labs</div>
+<nav><div class="logo">
+    <video autoplay loop muted playsinline class="logo-video">
+        <source src="your-logo-video.mp4" type="video/mp4">
+    </video>
+</div>
+
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
