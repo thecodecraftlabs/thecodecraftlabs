@@ -6,25 +6,20 @@
 <title>The Code Craft Labs | Premium IT Agency</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
-
 :root{
---bg:#020617;
---card:#0f172a;
---border:rgba(255,255,255,0.08);
---primary:#7c3aed;
+--bg:#030712;
+--glass:rgba(255,255,255,0.05);
+--border:rgba(255,255,255,0.1);
+--primary:#6366f1;
 --accent:#00eaff;
---text:#f8fafc;
+--text:#f1f5f9;
 --muted:#94a3b8;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Poppins,sans-serif;
 background:var(--bg);
@@ -33,22 +28,20 @@ scroll-behavior:smooth;
 }
 
 /* NAVBAR */
-
 .navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-background:rgba(5,11,24,0.95);
+padding:15px 30px;
+background:#050b18;
 position:sticky;
 top:0;
-z-index:999;
-backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo-wrapper{
-width:65px;
-height:65px;
+width:55px;
+height:55px;
 }
 
 .logo-video{
@@ -56,8 +49,15 @@ width:100%;
 height:100%;
 object-fit:cover;
 border-radius:50%;
-border:2px solid var(--primary);
-box-shadow:0 0 15px var(--primary);
+border:2px solid #7434ff;
+box-shadow:0 0 10px #7434ff;
+animation:glow 2.5s infinite;
+}
+
+@keyframes glow{
+0%{box-shadow:0 0 6px #7434ff}
+50%{box-shadow:0 0 18px #7434ff}
+100%{box-shadow:0 0 6px #7434ff}
 }
 
 .nav-links{
@@ -73,90 +73,99 @@ transition:.3s;
 }
 
 .nav-links a:hover{
-color:white;
+color:#fff;
 }
 
 .menu-btn{
 display:none;
 font-size:28px;
 cursor:pointer;
-color:white;
-}
-
-@media(max-width:768px){
-
-.navbar{
-padding:15px 20px;
-}
-
-.nav-links{
-position:absolute;
-top:80px;
-right:20px;
-background:#0b1220;
-flex-direction:column;
-width:220px;
-padding:20px;
-border-radius:15px;
-display:none;
-box-shadow:0 0 20px rgba(0,0,0,0.4);
-}
-
-.nav-links.active{
-display:flex;
-}
-
-.menu-btn{
-display:block;
-}
-
 }
 
 /* HERO */
-
 .hero{
-padding:140px 20px 100px;
+padding:160px 20px 120px;
 text-align:center;
-background:radial-gradient(circle at center, rgba(0,234,255,0.1), transparent 60%);
+background:radial-gradient(circle at center,rgba(0,234,255,.12),transparent 60%);
 }
 
 .hero h1{
-font-size:clamp(2.2rem,5vw,3.5rem);
+font-size:clamp(2.2rem,5vw,4rem);
 font-weight:800;
-margin-bottom:20px;
 }
 
 .hero p{
 color:var(--muted);
-font-size:1.1rem;
-margin-bottom:25px;
+margin-top:15px;
 }
 
 .demo-badge{
+margin-top:25px;
 display:inline-block;
-background:linear-gradient(to right,var(--primary),var(--accent));
+background:var(--accent);
 padding:10px 25px;
 border-radius:30px;
+color:#000;
 font-weight:600;
 }
 
-/* SECTIONS */
-
+/* SECTION */
 section{
-padding:90px 20px;
+padding:100px 20px;
 max-width:1200px;
 margin:auto;
 }
 
 .title{
 text-align:center;
-font-size:2.4rem;
+font-size:2.5rem;
 margin-bottom:60px;
 font-weight:800;
 }
 
-/* ABOUT */
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+}
 
+/* CARD */
+.card,.testimonial-card,.job-box{
+background:var(--glass);
+padding:25px;
+border-radius:20px;
+border:1px solid var(--border);
+backdrop-filter:blur(12px);
+transition:.35s;
+}
+
+.card:hover,.testimonial-card:hover,.job-box:hover{
+transform:translateY(-8px);
+border-color:var(--accent);
+box-shadow:0 0 22px rgba(0,234,255,0.3);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:12px;
+}
+
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 25px;
+border-radius:30px;
+background:linear-gradient(to right,var(--primary),var(--accent));
+color:#fff;
+text-decoration:none;
+font-weight:600;
+}
+
+/* ABOUT */
 .about-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -172,80 +181,27 @@ border-radius:20px;
 border:1px solid var(--border);
 }
 
-@media(max-width:768px){
-.about-grid{
-grid-template-columns:1fr;
-}
-.about-grid img{
-height:350px;
-}
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-/* CARDS */
-
-.card,.job-box{
-background:rgba(255,255,255,0.04);
-padding:25px;
-border-radius:18px;
-border:1px solid var(--border);
-transition:.3s;
-}
-
-.card:hover,.job-box:hover{
-transform:translateY(-6px);
-border-color:var(--accent);
-}
-
-.card img{
-width:100%;
-height:170px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:12px;
-}
-
-/* FORMS */
-
+/* CONTACT */
 .contact-box{
 max-width:650px;
 margin:auto;
-background:rgba(255,255,255,0.04);
-padding:35px;
+background:var(--glass);
+padding:40px;
 border-radius:20px;
 border:1px solid var(--border);
 }
 
-input,textarea{
+input,textarea,select{
 width:100%;
 padding:14px;
-margin-bottom:12px;
+margin-bottom:15px;
 border-radius:10px;
 border:1px solid var(--border);
 background:#0b1220;
-color:white;
+color:var(--text);
 }
 
-.btn{
-width:100%;
-padding:14px;
-border-radius:40px;
-background:linear-gradient(to right,var(--primary),var(--accent));
-border:none;
-color:white;
-font-weight:600;
-cursor:pointer;
-}
-
-/* FLOAT BUTTONS */
-
+/* FLOAT */
 .floating{
 position:fixed;
 right:20px;
@@ -262,23 +218,44 @@ height:55px;
 border-radius:50%;
 display:grid;
 place-items:center;
-font-size:22px;
 color:white;
+font-size:22px;
 text-decoration:none;
 }
 
-.float-btn{background:#25d366;}
-.call-btn{background:#007aff;}
-.mail-btn{background:#ef4444;}
+.float-btn{background:#25d366}
+.call-btn{background:#007aff}
+.mail-btn{background:#ef4444}
 
 footer{
-padding:40px 20px;
+padding:40px;
 text-align:center;
 color:var(--muted);
 border-top:1px solid var(--border);
-margin-top:60px;
+margin-top:80px;
 }
 
+/* MOBILE */
+@media(max-width:768px){
+
+.about-grid{grid-template-columns:1fr}
+
+.nav-links{
+position:absolute;
+top:70px;
+right:20px;
+background:#0a1122;
+flex-direction:column;
+padding:20px;
+border-radius:12px;
+display:none;
+}
+
+.nav-links.active{display:flex}
+
+.menu-btn{display:block}
+
+}
 </style>
 </head>
 
@@ -291,6 +268,8 @@ margin-top:60px;
 </video>
 </div>
 
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
 <div class="nav-links" id="navMenu">
 <a href="#about">About</a>
 <a href="#services">Services</a>
@@ -298,24 +277,22 @@ margin-top:60px;
 <a href="#hiring">Hiring</a>
 <a href="#contact">Contact</a>
 </div>
-
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
 </nav>
 
 <section class="hero">
 <h1>We Build High-End Digital Experiences</h1>
-<p>Premium Websites • SEO • CRM • Automation • Branding</p>
+<p>Premium Websites • SEO • CRM Automations • Branding • Growth Systems</p>
 <div class="demo-badge">🔥 Demo Available</div>
 </section>
 
 <section id="about">
-<h2 class="title">About Us</h2>
+<h2 class="title">About The Code Craft Labs</h2>
 <div class="about-grid">
 <img src="https://i.ibb.co/KxS8h8dc/satyam-digital.jpg">
 <div>
-<h3 style="color:var(--accent);">Founder – Satyam</h3>
-<p>We build automated business systems & premium websites.</p>
-<p>Our mission is to help businesses grow with technology.</p>
+<h3 style="color:var(--accent)">Meet Satyam — Founder</h3>
+<p>I build high-performance automated digital systems for Indian businesses.</p>
+<p>Websites, CRM setups, SEO & automation that generate real results.</p>
 </div>
 </div>
 </section>
@@ -323,34 +300,20 @@ margin-top:60px;
 <section id="services">
 <h2 class="title">Our Services</h2>
 <div class="grid">
-<div class="card"><h3>Web Development</h3></div>
-<div class="card"><h3>Landing Pages</h3></div>
-<div class="card"><h3>CRM Automation</h3></div>
-<div class="card"><h3>SEO & Speed</h3></div>
+<div class="card"><h3>Web Development</h3><p>High-speed premium websites.</p></div>
+<div class="card"><h3>Landing Pages</h3><p>High converting pages for ads.</p></div>
+<div class="card"><h3>Automations</h3><p>CRM + WhatsApp workflows.</p></div>
+<div class="card"><h3>Speed & SEO</h3><p>Performance + ranking boost.</p></div>
 </div>
 </section>
 
 <section id="projects">
 <h2 class="title">Projects</h2>
 <div class="grid">
-<div class="card"><h3>INBIX 2025</h3></div>
-<div class="card"><h3>Spiti Hotels</h3></div>
-<div class="card"><h3>Lonavala Villas</h3></div>
-<div class="card"><h3>Dr Falke</h3></div>
-</div>
-</section>
-
-<section id="hiring">
-<h2 class="title">We're Hiring</h2>
-<div class="contact-box">
-<form action="https://formsubmit.co/thecodecraft97G@gmail.com" method="POST" enctype="multipart/form-data">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<input type="text" name="position" placeholder="Position Applying For" required>
-<textarea name="message" placeholder="Your Experience" required></textarea>
-<input type="file" name="attachment" accept=".pdf" required>
-<button class="btn">Apply Now</button>
-</form>
+<div class="card"><h3>INBIX 2025</h3><a class="btn" href="https://inbix2025.icmrnirth.org/" target="_blank">View</a></div>
+<div class="card"><h3>Spiti Hotels</h3><a class="btn" href="https://hotelspitivalley.com/" target="_blank">View</a></div>
+<div class="card"><h3>Lonavala Villas</h3><a class="btn" href="https://www.bungalowsinlonavala.com/" target="_blank">View</a></div>
+<div class="card"><h3>Dr Falke</h3><a class="btn" href="https://drfalke.in/" target="_blank">View</a></div>
 </div>
 </section>
 
@@ -359,8 +322,8 @@ margin-top:60px;
 <div class="contact-box">
 <form action="https://formsubmit.co/thecodecraft97G@gmail.com" method="POST">
 <input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Your Message" required></textarea>
+<input type="email" name="email" placeholder="Email Address" required>
+<textarea name="message" rows="5" placeholder="Your Project Details..." required></textarea>
 <button class="btn">Send Message</button>
 </form>
 </div>
@@ -373,8 +336,7 @@ margin-top:60px;
 </div>
 
 <footer>
-© 2026 The Code Craft Labs — Premium IT Solutions<br>
-Bhopal, Madhya Pradesh, India
+© 2026 The Code Craft Labs — Premium IT Solutions
 </footer>
 
 <script>
