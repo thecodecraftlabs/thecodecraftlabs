@@ -1,309 +1,316 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Code Craft Labs</title>
-
-<meta name="description" content="The Code Craft Labs - High-end Websites, CRM Automation, SEO & Marketing Systems for Indian Businesses.">
-<meta name="keywords" content="web development, SEO, branding, automations, CRM, landing pages, marketing">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<style>
-
-:root{
---bg:#030712;
---primary:#6366f1;
---accent:#00eaff;
---text:#f1f5f9;
---muted:#94a3b8;
---border:rgba(255,255,255,0.1);
---glass:rgba(255,255,255,0.05);
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-font-family:Poppins,sans-serif;
-color:var(--text);
-scroll-behavior:smooth;
-background:linear-gradient(-45deg,#030712,#0f172a,#111827,#030712);
-background-size:400% 400%;
-animation:bgMove 15s ease infinite;
-}
-
-@keyframes bgMove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
-
-/* Scroll Progress */
-#progress{
-position:fixed;
-top:0;
-left:0;
-height:4px;
-background:linear-gradient(to right,#6366f1,#00eaff);
-width:0%;
-z-index:2000;
-}
-
-/* NAVBAR */
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-background:rgba(5,11,24,.7);
-backdrop-filter:blur(15px);
-position:sticky;
-top:0;
-z-index:999;
-}
-
-.logo-wrapper{
-width:50px;
-height:60px;
-}
-
-.logo-video{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:20%;
-border:2px solid #7434ff;
-animation:glow 2.5s infinite;
-}
-
-@keyframes glow{
-0%{box-shadow:0 0 6px #7434ff}
-50%{box-shadow:0 0 18px #7434ff}
-100%{box-shadow:0 0 6px #7434ff}
-}
-
-.nav-links{
-display:flex;
-gap:35px;
-}
-
-.nav-links a{
-color:#cbd5e1;
-text-decoration:none;
-font-weight:500;
-transition:.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-color:var(--accent);
-}
-
-.menu-btn{
-display:none;
-font-size:28px;
-cursor:pointer;
-}
-
-/* HERO */
-.hero{
-padding:180px 20px 130px;
-text-align:center;
-background:radial-gradient(circle at center,rgba(0,234,255,.15),transparent 60%);
-}
-
-.hero h1{
-font-size:clamp(2.6rem,5vw,4rem);
-font-weight:800;
-}
-
-.hero p{
-color:var(--muted);
-margin-top:15px;
-}
-
-.demo-badge{
-margin-top:25px;
-display:inline-block;
-background:var(--accent);
-padding:10px 25px;
-border-radius:30px;
-font-weight:600;
-color:#000;
-}
-
-/* SECTION */
-section{
-padding:100px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.title{
-text-align:center;
-font-size:2.6rem;
-margin-bottom:60px;
-font-weight:800;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:35px;
-}
-
-/* CARDS */
-.card,.testimonial-card,.job-box{
-background:var(--glass);
-padding:25px;
-border-radius:20px;
-border:1px solid var(--border);
-backdrop-filter:blur(15px);
-transition:.4s;
-}
-
-.card:hover,.testimonial-card:hover,.job-box:hover{
-transform:translateY(-8px);
-border-color:var(--accent);
-box-shadow:0 0 25px rgba(0,234,255,.3);
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:12px;
-margin-bottom:10px;
-}
-
-/* ABOUT */
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.about-grid img{
-width:100%;
-height:520px;
-object-fit:cover;
-border-radius:20px;
-border:1px solid var(--border);
-}
-
-/* CONTACT */
-.contact-box{
-max-width:650px;
-margin:auto;
-background:var(--glass);
-padding:40px;
-border-radius:20px;
-border:1px solid var(--border);
-}
-
-input,textarea,select{
-width:100%;
-padding:15px;
-margin-bottom:12px;
-border-radius:10px;
-border:1px solid var(--border);
-background:#0b1220;
-color:var(--text);
-}
-
-.btn{
-padding:14px 30px;
-border-radius:50px;
-background:linear-gradient(to right,var(--primary),var(--accent));
-color:white;
-border:none;
-cursor:pointer;
-font-weight:600;
-width:100%;
-}
-
-/* FLOAT */
-.floating{
-position:fixed;
-right:20px;
-bottom:20px;
-display:flex;
-flex-direction:column;
-gap:12px;
-z-index:999;
-}
-
-.float-btn{
-width:55px;
-height:55px;
-border-radius:50%;
-display:grid;
-place-items:center;
-color:white;
-font-size:24px;
-text-decoration:none;
-}
-
-.float-btn{background:#25d366}
-.call-btn{background:#007aff}
-.mail-btn{background:#ef4444}
-
-footer{
-padding:40px;
-text-align:center;
-color:var(--muted);
-border-top:1px solid var(--border);
-margin-top:80px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-.about-grid{grid-template-columns:1fr}
-
-.nav-links{
-position:absolute;
-top:70px;
-right:20px;
-background:#0a1122;
-flex-direction:column;
-padding:20px;
-border-radius:12px;
-display:none;
-}
-
-.nav-links.active{display:flex}
-.menu-btn{display:block}
-}
-
-</style>
-</head>
-
-<body>
-
-<div id="progress"></div>
-
-<nav class="navbar">
-<div class="logo-wrapper">
-<video autoplay loop muted playsinline class="logo-video">
-<source src="https://thecodecraftlabs.github.io/thecodecraftlabs/codecraftlologo.mp4" type="video/mp4">
-</video>
-</div>
-
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
+-<!DOCTYPE html>
+<html lang="en">
 
-<div class="nav-links" id="navMenu">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#hiring">Hiring</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Code Craft Labs </title>
 
+    <!-- SEO -->
+    <meta name="description" content="The Code Craft Labs - High-end Websites, CRM Automation, SEO & Marketing Systems for Indian Businesses.">
+    <meta name="keywords" content="web development, SEO, branding, automations, CRM, landing pages, marketing">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg: #030712;
+            --card: #0f172a;
+            --border: rgba(255,255,255,0.1);
+            --primary: #6366f1;
+            --accent: #00eaff;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --glass: rgba(255,255,255,0.05);
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            font-family: Poppins, sans-serif;
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+/* MAIN NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    background: #050b18;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* MAIN NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    background: #050b18;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* PERFECT LOGO SIZE (Desktop) */
+.logo-wrapper {
+    width: 45px;
+    height: 55px;
+}
+.logo-video {
+     width: 100%;
+    height: 130%;
+    border-radius: 25%;
+    object-fit: cover;
+    border: 2px solid #7434ff;
+    box-shadow: 0 0 8px rgba(116, 52, 255, 0.4);
+    animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 6px #7434ff; }
+    50% { box-shadow: 0 0 18px #7434ff; }
+    100% { box-shadow: 0 0 6px #7434ff; }
+}
+
+
+
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* MOBILE MENU ICON */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .logo-wrapper {
+        width: 55px;
+        height: 75px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 180px;
+        background: #0a1122;
+        flex-direction: column;
+        padding: 15px 20px;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    /* SHOW WHEN ACTIVE */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Show hamburger menu */
+    .menu-btn {
+        display: block;
+    }
+}
+
+
+
+        /* HERO ----------------------------------------------------- */
+        .hero {
+            padding: 180px 20px 130px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0,234,255,0.12), transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .demo-badge {
+            margin-top: 25px;
+            background: var(--accent);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            color: black;
+        }
+
+        /* SECTIONS -------------------------------------------------- */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2.7rem;
+            font-weight: 800;
+            margin-bottom: 60px;
+        }
+
+        /* ABOUT ------------------------------------------------------ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-grid img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 0 30px rgba(0,255,255,0.15);
+        }
+
+        /* UNIVERSAL GRIDS --------------------------------------------- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            gap: 35px;
+        }
+
+        /* CARDS -------------------------------------------------------- */
+        .card, .testimonial-card, .job-box {
+            background: var(--glass);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            transition: .35s ease;
+        }
+
+        .card:hover, .testimonial-card:hover, .job-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 0 22px rgba(0,234,255,0.25);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT ----------------------------------------------------- */
+        .contact-box {
+            max-width: 650px;
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin: auto;
+            backdrop-filter: blur(15px);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: #0b1220;
+            color: var(--text);
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 50px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        /* FLOAT BUTTONS ---------------------------------------------- */
+        .floating {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .float-btn { background: #25d366; }
+        .call-btn { background: #007aff; }
+        .mail-btn { background: #ef4444; }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 
 <body>
@@ -508,22 +515,15 @@ display:none;
     © 2026 The Code Craft Labs — Premium IT Solutions
 </footer>
 
+<!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init({duration:900});
+<script>AOS.init({duration: 900});</script>
 
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("active");
-}
-
-/* Scroll Progress */
-window.onscroll=function(){
-let winScroll=document.body.scrollTop||document.documentElement.scrollTop;
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-let scrolled=(winScroll/height)*100;
-document.getElementById("progress").style.width=scrolled+"%";
+</body>
+    <script>
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
 }
 </script>
 
-</body>
-</html>
+</html>--
