@@ -3,146 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeCraft Labs</title>
+<title>The Code Craft Labs | Premium IT Agency</title>
+
+<meta name="description" content="The Code Craft Labs - High-end Websites, CRM Automation, SEO & Marketing Systems for Indian Businesses.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 
-/* ===== RESET ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+:root{
+--bg:#030712;
+--card:#0f172a;
+--border:rgba(255,255,255,0.1);
+--primary:#6366f1;
+--accent:#00eaff;
+--text:#f1f5f9;
+--muted:#94a3b8;
+--glass:rgba(255,255,255,0.05);
 }
 
 body{
-    background:#0a1122;
-    color:white;
+margin:0;
+background:var(--bg);
+font-family:Poppins,sans-serif;
+color:var(--text);
+scroll-behavior:smooth;
 }
 
-/* ===== NAVBAR ===== */
+/* ================= NAVBAR ================= */
+
 .navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 50px;
-    background:rgba(10,17,34,0.9);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 40px;
+background:#050b18;
+position:sticky;
+top:0;
+z-index:999;
 }
 
 .logo-wrapper{
-    width:55px;
-    height:55px;
+width:65px;
+height:65px;
+display:flex;
+align-items:center;
 }
 
 .logo-video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:50%;
-    border:2px solid #7434ff;
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+border:2px solid #7434ff;
+box-shadow:0 0 15px #7434ff;
+animation:glow 2.5s infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 10px #7434ff;}
+to{box-shadow:0 0 25px #7434ff;}
 }
 
 .nav-links{
-    display:flex;
-    gap:30px;
+display:flex;
+gap:30px;
 }
 
 .nav-links a{
-    text-decoration:none;
-    color:white;
-    font-size:16px;
-    transition:0.3s;
+color:#cbd5e1;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
 }
 
 .nav-links a:hover{
-    color:#7434ff;
+color:#fff;
 }
 
 .menu-btn{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
+display:none;
+font-size:28px;
+cursor:pointer;
+color:white;
 }
 
-/* ===== HERO ===== */
+/* MOBILE */
+@media(max-width:768px){
+
+.nav-links{
+position:absolute;
+top:75px;
+right:20px;
+background:#0a1122;
+flex-direction:column;
+padding:20px;
+width:220px;
+border-radius:12px;
+display:none;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+
+/* ================= HERO ================= */
+
 .hero{
-    padding:160px 20px 120px;
-    text-align:center;
+padding:160px 20px 120px;
+text-align:center;
+background:radial-gradient(circle at center, rgba(0,234,255,0.12), transparent 60%);
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:20px;
+font-size:clamp(2.5rem,5vw,4rem);
+font-weight:800;
 }
 
 .hero p{
-    font-size:18px;
-    max-width:700px;
-    margin:auto;
-    opacity:0.8;
+color:var(--muted);
+font-size:1.1rem;
 }
 
-/* ===== SECTION ===== */
+.demo-badge{
+margin-top:20px;
+background:var(--accent);
+padding:10px 25px;
+border-radius:30px;
+font-weight:600;
+color:black;
+display:inline-block;
+}
+
+/* ================= SECTIONS ================= */
+
 section{
-    padding:80px 20px;
-    text-align:center;
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
 }
 
-section h2{
-    font-size:36px;
-    margin-bottom:20px;
-    color:#7434ff;
+.title{
+text-align:center;
+font-size:2.6rem;
+font-weight:800;
+margin-bottom:60px;
 }
 
-section p{
-    max-width:800px;
-    margin:auto;
-    opacity:0.8;
+/* ABOUT */
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
 }
 
-/* ===== FOOTER ===== */
-footer{
-    padding:30px;
-    text-align:center;
-    background:#050b18;
-    opacity:0.7;
+.about-grid img{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:20px;
+border:1px solid var(--border);
 }
 
-/* ===== MOBILE ===== */
 @media(max-width:768px){
+.about-grid{grid-template-columns:1fr;}
+}
 
-    .navbar{
-        padding:15px 20px;
-    }
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:35px;
+}
 
-    .nav-links{
-        position:absolute;
-        top:70px;
-        right:20px;
-        background:#0a1122;
-        flex-direction:column;
-        padding:20px;
-        width:200px;
-        border-radius:12px;
-        display:none;
-    }
+/* CARDS */
+.card,.testimonial-card,.job-box{
+background:var(--glass);
+padding:25px;
+border-radius:20px;
+border:1px solid var(--border);
+backdrop-filter:blur(12px);
+transition:.3s;
+}
 
-    .nav-links a{
-        padding:10px 0;
-    }
+.card:hover,.testimonial-card:hover,.job-box:hover{
+transform:translateY(-8px);
+border-color:var(--accent);
+box-shadow:0 0 20px rgba(0,234,255,0.3);
+}
 
-    .nav-links.active{
-        display:flex;
-    }
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:10px;
+}
 
-    .menu-btn{
-        display:block;
-    }
+/* FORMS */
+.contact-box{
+max-width:650px;
+margin:auto;
+background:var(--glass);
+padding:40px;
+border-radius:20px;
+border:1px solid var(--border);
+}
+
+input,textarea,select{
+width:100%;
+padding:15px;
+margin-bottom:12px;
+border-radius:10px;
+border:1px solid var(--border);
+background:#0b1220;
+color:white;
+}
+
+.btn{
+padding:14px;
+border-radius:50px;
+background:linear-gradient(to right,var(--primary),var(--accent));
+border:none;
+color:white;
+font-weight:600;
+cursor:pointer;
+width:100%;
+}
+
+/* FLOAT */
+.floating{
+position:fixed;
+right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:999;
+}
+
+.float-btn{
+width:55px;
+height:55px;
+border-radius:50%;
+display:grid;
+place-items:center;
+font-size:24px;
+color:white;
+text-decoration:none;
+}
+
+.float-btn{background:#25d366;}
+.call-btn{background:#007aff;}
+.mail-btn{background:#ef4444;}
+
+footer{
+padding:40px 20px;
+text-align:center;
+color:var(--muted);
+border-top:1px solid var(--border);
+margin-top:80px;
 }
 
 </style>
@@ -152,68 +280,137 @@ footer{
 
 <!-- NAVBAR -->
 <nav class="navbar">
+<div class="logo-wrapper">
+<video autoplay loop muted playsinline class="logo-video">
+<source src="https://thecodecraftlabs.github.io/thecodecraftlabs/codecraftlologo.mp4" type="video/mp4">
+</video>
+</div>
 
-    <div class="logo-wrapper">
-        <video autoplay loop muted playsinline class="logo-video">
-            <source src="codecraftlologo.mp4" type="video/mp4">
-        </video>
-    </div>
+<div class="nav-links" id="navMenu">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#hiring">Hiring</a>
+<a href="#contact">Contact</a>
+</div>
 
-    <div class="nav-links" id="navMenu">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#hiring">Hiring</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-    <h1>Welcome to CodeCraft Labs</h1>
-    <p>We build modern websites, web apps, and digital solutions that help businesses grow faster and smarter.</p>
-</div>
+<section class="hero">
+<h1>We Build High-End Digital Experiences</h1>
+<p>Premium Websites • SEO • CRM Automations • Branding • Growth Systems</p>
+<div class="demo-badge">🔥 Demo Available</div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
-    <h2>About Us</h2>
-    <p>CodeCraft Labs is a modern digital studio focused on creating high-performance, responsive and scalable web applications.</p>
+<h2 class="title">About The Code Craft Labs</h2>
+
+<div class="about-grid">
+<img src="https://i.ibb.co/KxS8h8dc/satyam-digital.jpg" alt="Founder">
+
+<div>
+<h3 style="color:var(--accent);">Meet Satyam — Founder</h3>
+<p>I specialize in building high-performance automated systems for businesses.</p>
+<p>We work with Real Estate, Hotels, Medical, Ecommerce, SaaS & Local Service Businesses.</p>
+<p><b>Mission:</b> Make your business run on autopilot.</p>
+</div>
+</div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-    <h2>Our Services</h2>
-    <p>Website Development, Web Apps, UI/UX Design, SEO Optimization, Performance Improvement and Maintenance.</p>
+<h2 class="title">Our Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://i.ibb.co/YmVnwB3/webdev.webp">
+<h3>Web Development</h3>
+<p>High-speed professional websites tailored for brands.</p>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/pjMXBwgb/load-153679281.webp">
+<h3>Landing Pages</h3>
+<p>High-converting landing pages for lead generation.</p>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/GvNbG28S/Automation-crm.png">
+<h3>Automations</h3>
+<p>CRM + WhatsApp + Email workflow automation.</p>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/DP51zrLg/speed.jpg">
+<h3>Speed & SEO</h3>
+<p>Speed boost + ranking improvements.</p>
+</div>
+
+</div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-    <h2>Projects</h2>
-    <p>We have worked on multiple web development and business automation projects delivering quality and performance.</p>
-</section>
+<h2 class="title">Projects</h2>
 
-<!-- HIRING -->
-<section id="hiring">
-    <h2>We're Hiring</h2>
-    <p>Join our team and work on exciting real-world projects. We are looking for passionate developers and designers.</p>
+<div class="grid">
+
+<div class="card">
+<h3>INBIX 2025 Conference</h3>
+<a class="btn" href="https://inbix2025.icmrnirth.org/" target="_blank">View Live</a>
+</div>
+
+<div class="card">
+<h3>Hotels in Spiti Valley</h3>
+<a class="btn" href="https://hotelspitivalley.com/" target="_blank">View Live</a>
+</div>
+
+<div class="card">
+<h3>Bungalows in Lonavala</h3>
+<a class="btn" href="https://www.bungalowsinlonavala.com/" target="_blank">View Live</a>
+</div>
+
+<div class="card">
+<h3>Dr. Falke Medical</h3>
+<a class="btn" href="https://drfalke.in/" target="_blank">View Live</a>
+</div>
+
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: contact@codecraftlabs.com</p>
+<h2 class="title">Contact Us</h2>
+
+<div class="contact-box">
+<form action="https://formsubmit.co/thecodecraft97G@gmail.com" method="POST">
+<input type="text" name="fullname" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+<textarea name="message" rows="5" placeholder="Your Project Details..." required></textarea>
+<button class="btn">Send Message</button>
+</form>
+</div>
 </section>
 
+<!-- FLOAT -->
+<div class="floating">
+<a class="float-btn" href="https://wa.me/919074827704" target="_blank">💬</a>
+<a class="float-btn call-btn" href="tel:+919074827704">📞</a>
+<a class="float-btn mail-btn" href="mailto:thecodecraft97G@gmail.com">✉</a>
+</div>
+
 <footer>
-    © 2026 CodeCraft Labs. All Rights Reserved.
+© 2026 The Code Craft Labs — Premium IT Solutions  
+<br>Bhopal, Madhya Pradesh, India
 </footer>
 
 <script>
 function toggleMenu(){
-    document.getElementById("navMenu").classList.toggle("active");
+document.getElementById("navMenu").classList.toggle("active");
 }
 </script>
 
